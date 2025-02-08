@@ -16,3 +16,12 @@ let logger = createLogger();
 logger.log("some text");
 logger.log("ahother");
 logger.getLogs();
+
+function createRandomGenerator(min, max) {
+    return function () {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+}
+
+let random = createRandomGenerator(20, 100);
+console.log(random());
